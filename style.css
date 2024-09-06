@@ -17,10 +17,15 @@
   .container {
     text-align: center;
   }
+
+  .gorilla {
+    filter: drop-shadow(-20px 0px 10px rgba(0, 0, 0, 0.329));
+  }
   
   h1 {
-    font-size: 2em;
+    font-size: 3em;
     color: #027a08;
+    text-shadow: #00000083 -10px 0 10px;
   }
   
   .countdown {
