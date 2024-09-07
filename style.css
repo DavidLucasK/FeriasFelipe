@@ -6,7 +6,6 @@
   }
   
   body {
-    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +22,7 @@
     width: 300px;
     height: 300px;
     background-size: contain;
-    margin-left: 5rem;
+    margin-left: 6rem;
     transition: background-image 0.3s ease-in-out;
 }
 
@@ -31,7 +30,7 @@
     background-image: url('gorilla1.png');}
 
 .felipe:hover {
-    background-image: url('./felipe.png');}
+    background-image: url('felipe.png');}
   
   h1 {
     font-size: 3em;
@@ -62,4 +61,53 @@
     font-size: 1.2em;
     color: #666;
   }
-  
+
+/* Ajustes para telas menores que 768px */
+@media only screen and (max-width: 768px) {
+  .countdown {
+    gap: 10px; /* Reduz o espaçamento entre os itens */
+  }
+
+  .gorilla {
+    margin-left: 5rem;
+  }
+
+  .time {
+    padding: 1rem; /* Ajusta o padding para telas menores */
+    flex: 1 1 100px; /* Ajusta o crescimento e a largura mínima dos blocos */
+    max-width: 120px; /* Define um tamanho máximo menor para telas menores */
+  }
+
+  h1 {
+    font-size: 2.5em; /* Reduz o tamanho do título para telas menores */
+  }
+}
+
+/* Ajustes para telas muito pequenas (por exemplo, smartphones) */
+@media only screen and (max-width: 480px) {
+  .countdown {
+    gap: 5px; /* Reduz ainda mais o espaçamento entre os itens */
+  }
+
+  .gorilla {
+    margin-left: 2rem;
+  }
+
+  .time {
+    padding: 1rem; /* Reduz o padding para telas muito pequenas */
+    flex: 1 1 80px; /* Define o crescimento flexível e largura mínima menores */
+    max-width: 100px; /* Define um tamanho máximo ainda menor para smartphones */
+  }
+
+  h1 {
+    font-size: 2em; /* Reduz o tamanho do título para telas muito pequenas */
+  }
+
+  .time span {
+    font-size: 1.8em; /* Ajusta o tamanho da fonte dos números */
+  }
+
+  .time p {
+    font-size: 1em; /* Ajusta o tamanho da fonte das descrições */
+  }
+}
