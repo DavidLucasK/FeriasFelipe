@@ -9,12 +9,14 @@ let musicaTocada = false; // Variável para rastrear se a música já foi tocada
 const mensagens = [
   "Não tem mais gantt 📊",
   "Não tem mais call com a CBA.",
-  "Não tem mais sofrimento 😭.",
+  "Não tem mais sofrimento 😭",
   "Você é um vencedor 🏆",
   "Jogue muito no seu SteamDeck 🎮",
   "Nós te amamos e você merece.",
   "Estamos orgulhosos de você!",
-  "Você é nosso campeão 🏆"
+  "Você é nosso campeão 🏆",
+  "Sem mais ligeirinho ansioso",
+  "Duolingo Francês 24/7"
 ];
 
 function Ferias() {
