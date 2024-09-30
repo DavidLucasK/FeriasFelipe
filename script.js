@@ -5,7 +5,7 @@ let audioAtual = null;
 let interagiu = false;
 let musicaTocada = false; // Variável para rastrear se a música já foi tocada
 
-// Array de mensagens para exibir aleatoriamente (sem a primeira frase)
+// Array de mensagens para exibir em ordem sequencial
 const mensagens = [
   "Não tem mais gantt 📊",
   "Não tem mais call com a CBA.",
@@ -18,6 +18,9 @@ const mensagens = [
   "Sem mais ligeirinho ansioso",
   "Duolingo Francês 24/7 🦉"
 ];
+
+let indiceMensagem = 0; // Índice da mensagem atual
+const mensagemDefault = "Obrigado por sua dedicação!"; // Mensagem padrão quando acabar o loop
 
 function Ferias() {
   // Verifica se a música já foi tocada
@@ -43,9 +46,16 @@ function Ferias() {
 }
 
 function mudarFrase() {
-  // Seleciona uma mensagem aleatória do array
-  const mensagemAleatoria = mensagens[Math.floor(Math.random() * mensagens.length)];
-  document.querySelector('.countdown').innerHTML = `<h2>${mensagemAleatoria}</h2>`;
+  // Verifica se ainda há mensagens para exibir
+  if (indiceMensagem < mensagens.length) {
+    const mensagemAtual = mensagens[indiceMensagem];
+    document.querySelector('.countdown').innerHTML = `<h2>${mensagemAtual}</h2>`;
+    indiceMensagem++; // Incrementa o índice para a próxima mensagem
+  } else {
+    // Se todas as mensagens foram exibidas, mostra a mensagem default e reinicia
+    document.querySelector('.countdown').innerHTML = `<h2>${mensagemDefault}</h2>`;
+    indiceMensagem = 0; // Reinicia o índice
+  }
 }
 
 function updateCountdown() {
