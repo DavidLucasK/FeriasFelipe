@@ -4,11 +4,6 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
   }
-
-  #fireworksCanvas {
-    display: none; /* Escondido inicialmente */
-    z-index: 1; /* Coloca o canvas acima de outros elementos */
-}
   
   body {
     display: flex;
