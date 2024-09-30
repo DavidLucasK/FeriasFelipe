@@ -16,7 +16,7 @@ const mensagens = [
   "Estamos orgulhosos de você!",
   "Você é nosso campeão 🏆",
   "Sem mais ligeirinho ansioso",
-  "Duolingo Francês 24/7"
+  "Duolingo Francês 24/7 🦉"
 ];
 
 function Ferias() {
