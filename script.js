@@ -9,14 +9,14 @@ let musicaTocada = false; // Variável para rastrear se a música já foi tocada
 const mensagens = [
   "Não tem mais gantt 📊",
   "Não tem mais call com a CBA.",
-  "Não tem mais sofrimento 😭",
   "Você é um vencedor 🏆",
   "Jogue muito no seu SteamDeck 🎮",
+  "Duolingo Francês 24/7 🦉",
+  "Sem mais ligeirinho ansioso",
+  "Não tem mais sofrimento 😭",
   "Nós te amamos e você merece.",
   "Estamos orgulhosos de você!",
   "Você é nosso campeão 🏆",
-  "Sem mais ligeirinho ansioso",
-  "Duolingo Francês 24/7 🦉"
 ];
 
 let indiceMensagem = 0; // Índice da mensagem atual
