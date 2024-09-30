@@ -53,7 +53,10 @@ function updateCountdown() {
   const timeDifference = targetDate - now;
 
   if (timeDifference <= 0) {
-    Ferias();
+    // Se o usuário já interagiu, toca a música
+    if (interagiu) {
+      Ferias();
+    }
     return;
   }
 
@@ -68,10 +71,10 @@ function updateCountdown() {
   document.getElementById('seconds').textContent = seconds;
 }
 
-// Adiciona evento de clique ao elemento gorilla felipe
-document.querySelector('.gorilla.felipe').addEventListener('click', () => {
-  interagiu = true; // Define que o usuário interagiu
-  Ferias(); // Toca a música ao clicar
+// Adiciona evento de clique ao botão "Tocar Música"
+document.getElementById('tocar-musica').addEventListener('click', () => {
+  interagiu = true; // Marca que o usuário interagiu
+  Ferias(); // Toca a música ao clicar no botão
 });
 
 // Atualiza a contagem a cada segundo
