@@ -1,12 +1,45 @@
 // Define a data de término como 30/09 do ano atual
-const targetDate = new Date(new Date().getFullYear(), 8, 30, 23, 59, 59); // 30/09
+const targetDate = new Date(new Date().getFullYear(), 8, 29, 23, 59, 59); // 30/09
+
+let audioAtual = null;
+
+function tocaMusica() {
+
+    if (audioAtual) {
+        audioAtual.pause();
+        audioAtual.currentTime = 0;
+    }
+
+    audioAtual = new Audio("Final-Countdown.mp3");
+    audioAtual.play();
+}
+
+function Ferias() {
+
+  if (audioAtual) {
+      audioAtual.pause();
+      audioAtual.currentTime = 0;
+  }
+
+  audioAtual = new Audio("Suas_Ferias_chegaram_Felipe.mp3");
+  audioAtual.play();
+
+  document.querySelector('.countdown').innerHTML = "<h2>Suas férias chegaram!</h2>";
+  var time = document.querySelector('.time');
+  time.style.display = 'none';
+}
 
 function updateCountdown() {
   const now = new Date();
   const timeDifference = targetDate - now;
 
   if (timeDifference <= 0) {
-    document.querySelector('.countdown').innerHTML = "<h2>Contagem finalizada!</h2>";
+    Ferias();
+    return;
+  }
+
+  if (timeDifference < 1000 * 60 * 60 * 24) {
+    tocaMusica();
     return;
   }
 
