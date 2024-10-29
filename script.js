@@ -7,20 +7,19 @@ let musicaTocada = false; // Variável para rastrear se a música já foi tocada
 
 // Array de mensagens para exibir em ordem sequencial
 const mensagens = [
-  "Não tem mais gantt 📊",
-  "Não tem mais call com a CBA.",
-  "Você é um vencedor 🏆",
-  "Jogue muito no seu SteamDeck 🎮",
-  "Duolingo Francês 24/7 🦉",
-  "Sem mais ligeirinho ansioso",
-  "Não tem mais sofrimento 😭",
-  "Nós te amamos e você merece.",
-  "Estamos orgulhosos de você!",
-  "Você é nosso campeão 🏆",
+  "Gantt 📊 😭",
+  "Não fique triste, estamos com você",
+  "Calls com a CBA novamente, que saudade! 😎",
+  "Ponto G, tablet e muito mais! 🏆",
+  "Sem mais SteamDeck 🎮",
+  "Sem mais Francês, só português 🤮",
+  "Ligeirinho ansioso novamente de volta back 2.0",
+  "Espero que tenha descansado 😴!",
+  "Você ainda é nosso campeão 🏆",
 ];
 
 let indiceMensagem = 0; // Índice da mensagem atual
-const mensagemDefault = "Obrigado por sua dedicação!"; // Mensagem padrão quando acabar o loop
+const mensagemDefault = "Bem-vindo de volta!!"; // Mensagem padrão quando acabar o loop
 
 function Ferias() {
   // Verifica se a música já foi tocada
@@ -31,7 +30,16 @@ function Ferias() {
       audioAtual.currentTime = 0;
   }
 
-  audioAtual = new Audio("Suas_Ferias_chegaram_Felipe.mp3");
+  audioAtual = new Audio("sad.mp3");
+  
+  // Adiciona o evento `ended` para tocar a música novamente em loop
+  audioAtual.addEventListener('ended', () => {
+      audioAtual.currentTime = 0;
+      audioAtual.play().catch(error => {
+          console.error("Erro ao tocar música:", error);
+      });
+  });
+
   audioAtual.play().catch(error => {
       console.error("Erro ao tocar música:", error);
   });
@@ -39,7 +47,7 @@ function Ferias() {
   musicaTocada = true; // Marca que a música foi tocada
 
   // Exibe a primeira frase
-  document.querySelector('.countdown').innerHTML = `<h2>Suas férias chegaram!!</h2>`;
+  document.querySelector('.countdown').innerHTML = `<h2>Bem-vindo de volta!!</h2>`;
 
   // Inicia o timer para mudar a frase a cada 3 segundos
   setInterval(mudarFrase, 3000);
@@ -84,6 +92,7 @@ function updateCountdown() {
 // Adiciona evento de clique ao botão "Tocar Música"
 document.getElementById('tocar-musica').addEventListener('click', () => {
   interagiu = true; // Marca que o usuário interagiu
+
   Ferias(); // Toca a música ao clicar no botão
 });
 
