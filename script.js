@@ -94,6 +94,8 @@ document.getElementById('tocar-musica').addEventListener('click', () => {
   interagiu = true; // Marca que o usuário interagiu
 
   Ferias(); // Toca a música ao clicar no botão
+
+  document.getElementById('tocar-musica').style.display = 'none';
 });
 
 // Atualiza a contagem a cada segundo
