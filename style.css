@@ -47,11 +47,11 @@ body {
 }
 
 .felipe {
-  background-image: url('gorilla1.png');
+  background-image: url('felipesad.png');
 }
 
 .felipe:hover {
-  background-image: url('felipesad.png');
+  background-image: url('gorilla1.png');
 }
 
 h1 {
